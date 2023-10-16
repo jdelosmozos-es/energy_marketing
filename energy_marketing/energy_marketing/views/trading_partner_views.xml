@@ -1,0 +1,79 @@
+<odoo>
+	<record id="energy_trading_partner_tree_view" model="ir.ui.view">
+		<field name="name">energy.trading.partner.tree.view</field>
+        <field name="model">energy.trading.partner</field>
+        <field name="arch" type="xml">
+        	<tree>
+        		<field name="partner"/>
+        	</tree>
+        </field>
+    </record>
+    
+    <record id="energy_trading_partner_view" model="ir.ui.view">
+		<field name="name">energy.trading.partner.form.view</field>
+        <field name="model">energy.trading.partner</field>
+        <field name="arch" type="xml">
+        	<form>
+ <!-- 
+        		<header>
+                        <field name="state" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}"/>
+                </header>
+ -->
+        		<sheet>
+        			<field name="active" invisible="1"/>
+        			<h1>
+        				<field name="name"/>
+        			</h1>
+        			<widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="avatar_128" invisible="1"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;avatar_128&quot;}"/>
+        			<group>
+	        			<field name="partner" />
+		        	</group>
+		        	<group string="Contract types">
+	        			<field name="contract_types" nolabel="1">
+	        			<tree>
+	        				<field name="name"/>
+	        			</tree>
+	        		</field>
+	        		</group>
+ 
+	        	<div class="oe_chatter">
+                 	<field name="message_follower_ids" widget="mail_followers"/>
+                 	<field name="activity_ids" widget="mail_activity"/>
+                	<field name="message_ids" widget="mail_thread"/>
+            	</div>
+
+            	</sheet>
+        	</form>
+        </field>
+    </record>
+
+    <record id="energy_trading_contract_type_tree_view" model="ir.ui.view">
+		<field name="name">energy.trading.contract.type.tree.view</field>
+        <field name="model">energy.trading.contract.type</field>
+        <field name="arch" type="xml">
+        	<tree>
+        		<field name="name" />
+        		<field name="trading_partner" />
+        	</tree>
+        </field>
+    </record>
+        	    
+    <record id="energy_trading_contract_type_form_view" model="ir.ui.view">
+		<field name="name">energy.trading.contract.type.form.view</field>
+        <field name="model">energy.trading.contract.type</field>
+        <field name="arch" type="xml">
+        	<form>
+        		<sheet>
+        			<group>
+        				<field name="name" />
+        				<field name="trading_partner" readonly="1"/>
+        				<field name="description" />
+        			</group>
+        		</sheet>
+        	</form>
+        </field>
+    </record>
+    
+</odoo>

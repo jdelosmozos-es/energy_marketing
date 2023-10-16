@@ -1,0 +1,17 @@
+<odoo>
+	<record id="res_partner_energy_trading_partner_form_view" model="ir.ui.view">
+		<field name="name">Trading company form view in partner</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form" />
+		<field name="arch" type="xml">
+			<field name="vat" position="after">
+				<field name="trading_company" attrs="{'invisible': [('trading_company','=',False)]}"/>
+			</field>
+        	<xpath expr="//sheet" position="before">
+	            <header>
+    	            <button name='action_create_trading_company' class="oe_highlight" type='object' string='Create Energy Trading Company' attrs="{'invisible': [('is_company','=',False)]}"/>
+                </header>
+            </xpath>
+        </field>
+	</record>
+</odoo>
