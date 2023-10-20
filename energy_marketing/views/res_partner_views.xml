@@ -9,7 +9,7 @@
 			</field>
         	<xpath expr="//sheet" position="before">
 	            <header>
-    	            <button name='action_create_trading_company' class="oe_highlight" type='object' string='Create Energy Trading Company' attrs="{'invisible': [('is_company','=',False)]}"/>
+    	            <button name='action_create_trading_company' class="oe_highlight" type='object' string='Create Energy Trading Company' attrs="{'invisible': ['|',('is_company','=',False),('trading_company','!=',False)]}"/>
                 </header>
             </xpath>
         </field>

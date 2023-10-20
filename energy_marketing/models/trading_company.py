@@ -8,8 +8,7 @@ class TradingCompany(models.Model):
     
     partner = fields.Many2one(comodel_name='res.partner', required=True, readonly=True, ondelete='restrict', domain="[('is_company','=',True)]")
 #    contracts
-    contract_types = fields.One2many(comodel_name='energy.trading.contract.type', inverse_name='trading_partner')
-    
+    contract_types = fields.One2many(comodel_name='energy.trading.contract.type', inverse_name='trading_partner')  
     
 class TradingContractType(models.Model):
     _name = 'energy.trading.contract.type'

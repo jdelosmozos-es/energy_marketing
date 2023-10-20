@@ -16,11 +16,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_needaction
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_needaction
 msgid "Action Needed"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__active
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__active
 msgid "Active"
 msgstr "Activo"
@@ -31,28 +33,42 @@ msgid "Active Lang Count"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_ids
 msgid "Activities"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_exception_decoration
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_state
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_state
 msgid "Activity State"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_type_icon
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_type_icon
 msgid "Activity Type Icon"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__additional_info
+msgid "Additional info"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__type
 msgid "Address Type"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__relation_all_ids
+msgid "All relations with current partner"
 msgstr ""
 
 #. module: energy_marketing
@@ -68,6 +84,7 @@ msgid "Archived"
 msgstr "Archivado"
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_attachment_count
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
@@ -113,6 +130,16 @@ msgid "Blacklist"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__mobile_blacklisted
+msgid "Blacklisted Phone Is Mobile"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__phone_blacklisted
+msgid "Blacklisted Phone is Phone"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_bounce
 msgid "Bounce"
 msgstr ""
@@ -136,6 +163,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__city
 msgid "City"
 msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__closed
+msgid "Closed"
+msgstr "Cerrado"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__color
@@ -173,6 +205,11 @@ msgid "Company Type"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__partner_gid
+msgid "Company database ID"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__contact_address
 msgid "Complete Address"
 msgstr ""
@@ -184,10 +221,20 @@ msgid "Contact"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__contract_type
+msgid "Contract Type"
+msgstr "Tipo de contrato"
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__contract_types
 #: model:ir.ui.menu,name:energy_marketing.contract_types
 msgid "Contract Types"
 msgstr "Tipos de contrato"
+
+#. module: energy_marketing
+#: model:ir.model,name:energy_marketing.model_energy_contract
+msgid "Contract of a customer (contact) with an Energy Trading Company."
+msgstr "Contrato de un cliente (contacto) con una Comercializadora de energía."
 
 #. module: energy_marketing
 #: model_terms:ir.ui.view,arch_db:energy_marketing.energy_trading_partner_view
@@ -225,6 +272,7 @@ msgid "Create a new Trading Company."
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__create_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__create_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__create_uid
 msgid "Created by"
@@ -242,9 +290,25 @@ msgid "Credit Limit"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__partner
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__date
 msgid "Date"
 msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__delegate
+#: model:res.partner.relation.type,name:energy_marketing.delegate_relation
+msgid "Delegate"
+msgstr "Representante"
+
+#. module: energy_marketing
+#: model:res.partner.relation.type,name_inverse:energy_marketing.delegate_relation
+msgid "Delegated by"
+msgstr "Representado por"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__description
@@ -252,6 +316,7 @@ msgid "Description"
 msgstr "Descripción"
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__display_name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__display_name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__display_name
 msgid "Display Name"
@@ -296,16 +361,26 @@ msgid "Extension of partner for energy trading company"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__phone_sanitized
+msgid ""
+"Field used to store sanitized phone number. Helps speeding up searches and "
+"comparisons."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_follower_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_follower_ids
 msgid "Followers"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_partner_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_type_icon
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
@@ -331,11 +406,28 @@ msgid "Geo Longitude"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__has_message
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__has_message
 msgid "Has Message"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__search_relation_type_id
+msgid "Has relation of type"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__search_relation_partner_id
+msgid "Has relation with"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__search_relation_partner_category_id
+msgid "Has relation with a partner in category"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__id
 msgid "ID"
@@ -347,24 +439,38 @@ msgid "IM Status"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_exception_icon
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_exception_icon
 msgid "Icon"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_exception_icon
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_needaction
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_unread
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_needaction
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_error
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_sms_error
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_error
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__team_id
+msgid ""
+"If set, this Sales Team will be used for sales and assignments related to "
+"this partner"
 msgstr ""
 
 #. module: energy_marketing
@@ -375,9 +481,16 @@ msgid ""
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__phone_sanitized_blacklisted
+msgid ""
+"If the sanitized phone number is on the blacklist, the contact won't receive"
+" mass mailing sms anymore, from any list"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__image_1920
 msgid "Image"
-msgstr "Imágen"
+msgstr "Imagen"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__image_1024
@@ -400,9 +513,35 @@ msgid "Image 512"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__in_progress
+msgid "In progress"
+msgstr "Activado"
+
+#. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__mobile_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__phone_blacklisted
+msgid ""
+"Indicates if a blacklisted sanitized phone number is a phone number. Helps "
+"distinguish which number is blacklisted             when there is both a "
+"mobile and phone field in a model."
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__industry_id
 msgid "Industry"
 msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__initial
+msgid "Initial"
+msgstr "Cargado"
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__type
@@ -412,6 +551,7 @@ msgid ""
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_is_follower
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_is_follower
 msgid "Is Follower"
 msgstr ""
@@ -432,34 +572,40 @@ msgid "Language"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract____last_update
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type____last_update
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__write_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__write_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__write_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__write_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_main_attachment_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_main_attachment_id
 msgid "Main Attachment"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_error
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_has_error
 msgid "Message Delivery error"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_ids
 msgid "Messages"
 msgstr ""
@@ -470,6 +616,7 @@ msgid "Mobile"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__my_activity_date_deadline
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr ""
@@ -481,16 +628,19 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_date_deadline
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_summary
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_summary
 msgid "Next Activity Summary"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_type_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_type_id
 msgid "Next Activity Type"
 msgstr ""
@@ -506,26 +656,31 @@ msgid "Notes"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_needaction_counter
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_needaction_counter
 msgid "Number of Actions"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_error_counter
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_has_error_counter
 msgid "Number of errors"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_needaction_counter
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_error_counter
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_unread_counter
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
@@ -551,6 +706,21 @@ msgid "Phone"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__phone_sanitized_blacklisted
+msgid "Phone Blacklisted"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__phone_mobile_search
+msgid "Phone/Mobile"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__rate
+msgid "Rate"
+msgstr "Tarifa"
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__ref
 msgid "Reference"
 msgstr ""
@@ -566,19 +736,62 @@ msgid "Related employees based on their private address"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__relation_count
+msgid "Relation Count"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__search_relation_date
+msgid "Relation valid"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__renewed
+msgid "Renewed"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_user_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_user_id
 msgid "Responsible User"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__reversed
+msgid "Reversed"
+msgstr "Revertido"
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_sms_error
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__team_id
+msgid "Sales Team"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__salesperson
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__user_id
 msgid "Salesperson"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__phone_sanitized
+msgid "Sanitized Number"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__self
 msgid "Self"
 msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__settled
+msgid "Settled"
+msgstr "Liquidado"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__partner_share
@@ -611,11 +824,13 @@ msgid "Signup URL"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__state
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__state_id
 msgid "State"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_state
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_state
 msgid ""
 "Status based on activities\n"
@@ -697,6 +912,7 @@ msgid "Trading Companies Contract Types"
 msgstr "Tipos de contrato de Comercializadora"
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__trading_company
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__trading_company
 #: model:ir.model.fields,field_description:energy_marketing.field_res_partner__trading_company
 #: model:ir.model.fields,field_description:energy_marketing.field_res_users__trading_company
@@ -714,16 +930,19 @@ msgid "Type of contract a trading company sells"
 msgstr "Tipo de contrato que comercializa una Comercializadora"
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_exception_decoration
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_unread
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_unread
 msgid "Unread Messages"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_unread_counter
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
@@ -741,6 +960,18 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__website
 msgid "Website Link"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__website_message_ids
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__website_message_ids
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__website_message_ids
+msgid "Website communication history"
 msgstr ""
 
 #. module: energy_marketing
