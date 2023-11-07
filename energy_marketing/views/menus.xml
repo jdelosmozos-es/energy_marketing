@@ -21,14 +21,40 @@
             </p>
         </field>
 	</record>
+	
+	<record id="energy_action_rates" model="ir.actions.act_window">
+        <field name="name">Energy rates</field>
+        <field name="res_model">energy.rate</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Energy Rate.
+            </p>
+        </field>
+	</record>
+	
+	<record id="energy_action_contracts" model="ir.actions.act_window">
+        <field name="name">Energy contracts</field>
+        <field name="res_model">energy.contract</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Energy Contract.
+            </p>
+        </field>
+	</record>
 
 	<menuitem id="energy_marketing_root" name="Energy Marketing" sequence="90" groups="base.group_user" 
-		action="energy_action_trading_partners" web_icon="energy_marketing,static/description/icon.png"/>
-	<menuitem id="trading_partners" name="Trading Companies" sequence="10" groups="base.group_user" 
+		action="energy_action_contracts" web_icon="energy_marketing,static/description/icon.png"/>
+	<menuitem id="trading_partners" name="Trading Companies" sequence="20" groups="base.group_user" 
 		parent = "energy_marketing_root"/>
 	<menuitem id="trading_partners_list" name="Companies" sequence="10" groups="base.group_user" 
 		parent = "trading_partners" action="energy_action_trading_partners"/>
   	<menuitem id="contract_types" name="Contract Types" sequence="20" groups="base.group_user" 
 		parent = "trading_partners" action="energy_action_contract_types"/>
+	<menuitem id="energy_contracts" name="Contracts" sequence="10" groups="base.group_user" 
+		parent = "energy_marketing_root" action="energy_action_contracts"/>
+	<menuitem id="energy_rates" name="Rates" sequence="30" groups="base.group_user" 
+		parent = "energy_marketing_root" action="energy_action_rates"/>
 		
 </odoo>
