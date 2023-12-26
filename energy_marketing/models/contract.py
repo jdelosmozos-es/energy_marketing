@@ -43,6 +43,7 @@ class EnergyContract(models.Model):
     user_company_ids = fields.Many2many(
         'res.company', compute='_compute_user_company_ids',
         help='UX: Limit to lead company or all if no company')
+    receipts = fields.One2many(comodel_name='energy.contract.recepit', inverse_name='contract')
     
     @api.depends('company_id')
     def _compute_user_company_ids(self):
