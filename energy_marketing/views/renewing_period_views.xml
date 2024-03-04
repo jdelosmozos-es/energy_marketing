@@ -1,0 +1,12 @@
+<odoo>
+	<record id='energy_contract_renewing_period_tree_view' model='ir.ui.view'>
+		<field name="name">energy.contract.renewing.period.tree.view</field>
+        <field name="model">energy.contract.renewing.period</field>
+        <field name="arch" type="xml">
+        	<tree editable="top">
+        		<field name="name"/>
+        		<field name="period_in_months"/>
+        	</tree>
+        </field>
+	</record>
+</odoo>

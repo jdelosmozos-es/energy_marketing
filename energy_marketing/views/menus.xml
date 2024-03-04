@@ -44,17 +44,47 @@
         </field>
 	</record>
 
-	<menuitem id="energy_marketing_root" name="Energy Marketing" sequence="90" groups="base.group_user" 
+    <record id="energy_action_contract_incidences" model="ir.actions.act_window">
+        <field name="name">Energy contract incidences</field>
+        <field name="res_model">energy.contract.incidence</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Energy Contract Incidence.
+            </p>
+        </field>
+	</record>
+	
+	<record id="energy_action_renewing_periods" model="ir.actions.act_window">
+        <field name="name">Energy contract renewing periods</field>
+        <field name="res_model">energy.contract.renewing.period</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Energy Contract renewing period.
+            </p>
+        </field>
+	</record>
+
+	<menuitem id="energy_marketing_root" name="Energy Broker" sequence="90" groups="base.group_user" 
 		action="energy_action_contracts" web_icon="energy_marketing,static/description/icon.png"/>
-	<menuitem id="trading_partners" name="Trading Companies" sequence="20" groups="base.group_user" 
+	<menuitem id="trading_partners" name="Trading Companies" sequence="20" groups="energy_marketing.group_energy_manager"
 		parent = "energy_marketing_root"/>
-	<menuitem id="trading_partners_list" name="Companies" sequence="10" groups="base.group_user" 
+	<menuitem id="trading_partners_list" name="Companies" sequence="10" groups="energy_marketing.group_energy_manager" 
 		parent = "trading_partners" action="energy_action_trading_partners"/>
-  	<menuitem id="contract_types" name="Contract Types" sequence="20" groups="base.group_user" 
+  	<menuitem id="contract_types" name="Contract Types" sequence="20" groups="energy_marketing.group_energy_manager" 
 		parent = "trading_partners" action="energy_action_contract_types"/>
-	<menuitem id="energy_contracts" name="Contracts" sequence="10" groups="base.group_user" 
-		parent = "energy_marketing_root" action="energy_action_contracts"/>
-	<menuitem id="energy_rates" name="Rates" sequence="30" groups="base.group_user" 
+	<menuitem id="energy_contracts" name="Contracts" sequence="10" groups="base.group_user"
+        parent = "energy_marketing_root"/>
+	<menuitem id="energy_contracts_contracts" name="Contracts" sequence="10" groups="base.group_user" 
+        parent = "energy_contracts" action="energy_action_contracts"/>
+    <menuitem id="energy_contract_incidences" name="Incidences" sequence="30" groups="energy_marketing.group_energy_manager" 
+		parent = "energy_contracts" action="energy_action_contract_incidences"/>
+	<menuitem id="energy_rates" name="Rates" sequence="30" groups="energy_marketing.group_energy_manager"
 		parent = "energy_marketing_root" action="energy_action_rates"/>
+	<menuitem id="energy_marketing_configuration" name="Configuration" sequence="40" groups="energy_marketing.group_energy_manager" 
+		parent = "energy_marketing_root" />
+	<menuitem id="energy_marketing_contract_renewing_periods" name="Renewing periods" sequence="10" groups="energy_marketing.group_energy_manager"
+		parent = "energy_marketing_configuration" action="energy_action_renewing_periods"/>
 		
 </odoo>

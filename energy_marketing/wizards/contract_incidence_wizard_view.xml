@@ -1,0 +1,28 @@
+<odoo>
+	<record id="contract_incidence_wizard_form_view" model='ir.ui.view'>
+		<field name="name">contract.incidence.wizard.form.view</field>
+		<field name="model">contract.incidence.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+				<group cols="2">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="contract" invisible="1"/>
+				</group>
+				<footer>
+					<button type="object" class="oe_highlight" name="generate_incidence" attrs="{'invisible': [('name','=',False),('description','=',False)]}">
+		        			Accept
+					</button>
+					<button string="Cancel" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+
+    <record id="energy_action_contract_incidences_wizard" model="ir.actions.act_window">
+        <field name="name">Energy contract incidences wizard</field>
+        <field name="res_model">contract.incidence.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+	</record>
+</odoo>

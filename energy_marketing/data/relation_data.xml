@@ -2,12 +2,32 @@
 	<data noupdate="1">
 		<record id="delegate_relation" model="res.partner.relation.type" >
 			<field name="allow_self">FALSE</field>
-			<field name="contact_type_left">p</field>
+			<field name="contact_type_left">c</field>
 			<field name="contact_type_right">p</field>
-			<field name="name">Delegate</field>
+			<field name="name">Administrator or attorney</field>
 			<field name="is_symmetric">FALSE</field>
-			<field name="name_inverse">Delegated by</field>
+			<field name="name_inverse">Represents</field>
 			<field name="handle_invalid_onchange">restrict</field>
 		</record>
+		
+		<record id="annual_contract_renewing_period" model="energy.contract.renewing.period" >
+			<field name="name">Annual</field>
+			<field name="period_in_months">12</field>
+		</record>
+
+		
+
+        <record id="dep_salespersons" model="hr.department">
+			<field name="name">Salespersons</field>
+		  </record>
+
+		<record model="mail.channel" id="channel_administration_departament">
+			<field name="name">Administration</field>
+			<field name="description">General channel for administration departament</field>
+			<field name="public">groups</field>
+		    <field name="group_public_id" ref="base.group_user"/>
+		 	<field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
+			<field name="subscription_department_ids" eval="[Command.link(ref('hr.dep_administration'))]"/>
+		 </record>
 	</data>
 </odoo>

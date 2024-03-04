@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-06 21:15+0000\n"
-"PO-Revision-Date: 2023-11-06 21:15+0000\n"
+"POT-Creation-Date: 2024-03-04 01:45+0000\n"
+"PO-Revision-Date: 2024-03-04 01:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,14 @@ msgid "# Meetings"
 msgstr ""
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.contract_incidence_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:energy_marketing.contract_resolution_wizard_form_view
+msgid "Accept"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_needaction
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_needaction
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_needaction
 msgid "Action Needed"
 msgstr ""
@@ -39,24 +46,28 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_ids
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_ids
 msgid "Activities"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_exception_decoration
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_exception_decoration
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_state
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_state
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_state
 msgid "Activity State"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_type_icon
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_type_icon
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_type_icon
 msgid "Activity Type Icon"
 msgstr ""
@@ -72,6 +83,16 @@ msgid "Address Type"
 msgstr ""
 
 #. module: energy_marketing
+#: model:mail.channel,name:energy_marketing.channel_administration_departament
+msgid "Administration"
+msgstr ""
+
+#. module: energy_marketing
+#: model:res.partner.relation.type,name:energy_marketing.delegate_relation
+msgid "Administrator or attorney"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__relation_all_ids
 msgid "All relations with current partner"
 msgstr ""
@@ -84,12 +105,23 @@ msgid ""
 msgstr ""
 
 #. module: energy_marketing
+#: model:energy.contract.renewing.period,name:energy_marketing.annual_contract_renewing_period
+msgid "Annual"
+msgstr ""
+
+#. module: energy_marketing
+#: model:res.groups,name:energy_marketing.group_energy_manager
+msgid "Appointment Administrator"
+msgstr ""
+
+#. module: energy_marketing
 #: model_terms:ir.ui.view,arch_db:energy_marketing.energy_trading_partner_view
 msgid "Archived"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_attachment_count
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_attachment_count
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
@@ -117,6 +149,11 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__avatar_512
 msgid "Avatar 512"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__balance
+msgid "Balance"
 msgstr ""
 
 #. module: energy_marketing
@@ -150,6 +187,29 @@ msgid "Bounce"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__CUPS
+msgid "CUPS"
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.contract_incidence_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:energy_marketing.contract_resolution_wizard_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Cancelar"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__cancelled
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__cancelled
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__channel_ids
 msgid "Channels"
 msgstr ""
@@ -170,7 +230,10 @@ msgid "City"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__closed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__closed
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__closed
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__state__closed
 msgid "Closed"
 msgstr ""
 
@@ -226,9 +289,21 @@ msgid "Complete Address"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.ui.menu,name:energy_marketing.energy_marketing_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model,name:energy_marketing.model_res_partner
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__child_ids
 msgid "Contact"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__contract
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__contract
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__contract
+msgid "Contract"
 msgstr ""
 
 #. module: energy_marketing
@@ -248,12 +323,19 @@ msgid "Contract of a customer (contact) with an Energy Trading Company."
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__contract_state
+msgid "Contract state"
+msgstr ""
+
+#. module: energy_marketing
 #: model_terms:ir.ui.view,arch_db:energy_marketing.energy_trading_partner_view
 msgid "Contract types"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.ui.menu,name:energy_marketing.energy_contracts
+#: model:ir.ui.menu,name:energy_marketing.energy_contracts_contracts
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_search_view
 msgid "Contracts"
 msgstr ""
 
@@ -278,6 +360,16 @@ msgid "Create Energy Trading Company"
 msgstr ""
 
 #. module: energy_marketing
+#: model_terms:ir.actions.act_window,help:energy_marketing.energy_action_contract_incidences
+msgid "Create a new Energy Contract Incidence."
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.actions.act_window,help:energy_marketing.energy_action_renewing_periods
+msgid "Create a new Energy Contract renewing period."
+msgstr ""
+
+#. module: energy_marketing
 #: model_terms:ir.actions.act_window,help:energy_marketing.energy_action_contracts
 msgid "Create a new Energy Contract."
 msgstr ""
@@ -298,7 +390,18 @@ msgid "Create a new Trading Company."
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__initial
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__initial
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__initial
+msgid "Created"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__create_uid
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__create_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__create_uid
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__create_uid
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__create_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__create_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__create_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__create_uid
@@ -306,7 +409,11 @@ msgid "Created by"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__create_date
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__create_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__create_date
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__create_date
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__create_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__create_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__create_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__create_date
@@ -319,18 +426,30 @@ msgid "Credit Limit"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__partner
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__partner
 msgid "Customer"
 msgstr ""
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_tree_view
+msgid "DNI/NIE"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__date
 msgid "Date"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__delegate
-#: model:res.partner.relation.type,name:energy_marketing.delegate_relation
 msgid "Delegate"
 msgstr ""
 
@@ -340,18 +459,20 @@ msgid "Delegated Domain"
 msgstr ""
 
 #. module: energy_marketing
-#: model:res.partner.relation.type,name_inverse:energy_marketing.delegate_relation
-msgid "Delegated by"
-msgstr ""
-
-#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__description
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__description
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__description
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__description
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_incidence_form_view
 msgid "Description"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__display_name
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__display_name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__display_name
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__display_name
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__display_name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__display_name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__display_name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__display_name
@@ -388,12 +509,42 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.ui.menu,name:energy_marketing.energy_marketing_root
+msgid "Energy Broker"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.module.category,name:energy_marketing.module_energy_marketing
 msgid "Energy Marketing"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.actions.act_window,name:energy_marketing.energy_action_contract_resolution_wizard
+msgid "Energy contract incidence resolution wizard"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.actions.act_window,name:energy_marketing.energy_action_contract_incidences
+msgid "Energy contract incidences"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.actions.act_window,name:energy_marketing.energy_action_contract_incidences_wizard
+msgid "Energy contract incidences wizard"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.actions.act_window,name:energy_marketing.energy_action_renewing_periods
+msgid "Energy contract renewing periods"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.actions.act_window,name:energy_marketing.energy_action_contracts
 msgid "Energy contracts"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.module.category,description:energy_marketing.module_energy_marketing
+msgid "Energy marketing system security."
 msgstr ""
 
 #. module: energy_marketing
@@ -420,18 +571,21 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_follower_ids
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_follower_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_follower_ids
 msgid "Followers"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_partner_ids
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_partner_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_type_icon
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__activity_type_icon
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
@@ -458,6 +612,7 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__has_message
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__has_message
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__has_message
 msgid "Has Message"
 msgstr ""
@@ -478,7 +633,11 @@ msgid "Has relation with a partner in category"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__id
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__id
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__id
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__id
@@ -492,12 +651,14 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_exception_icon
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_exception_icon
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_exception_icon
 msgid "Icon"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_exception_icon
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__activity_exception_icon
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr ""
@@ -505,6 +666,8 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_needaction
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_unread
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_needaction
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_unread
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_needaction
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_unread
 msgid "If checked, new messages require your attention."
@@ -513,6 +676,8 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_error
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_sms_error
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_has_error
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_has_sms_error
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_error
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
@@ -565,8 +730,45 @@ msgid "Image 512"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__in_progress
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__in_progress
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__in_progress
 msgid "In progress"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__incidence_ids
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__incidence
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__incidence
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__incidence
+msgid "Incidence"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__incidence_count
+msgid "Incidence Count"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model,name:energy_marketing.model_energy_contract_incidence
+msgid "Incidence for a contract."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.ui.menu,name:energy_marketing.energy_contract_incidences
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_incidence_search_view
+msgid "Incidences"
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Incidencia"
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Incidencia resuelta"
 msgstr ""
 
 #. module: energy_marketing
@@ -591,11 +793,6 @@ msgid "Industry"
 msgstr ""
 
 #. module: energy_marketing
-#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__initial
-msgid "Initial"
-msgstr ""
-
-#. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__type
 msgid ""
 "Invoice & Delivery addresses are used in sales orders. Private addresses are"
@@ -604,6 +801,7 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_is_follower
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_is_follower
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_is_follower
 msgid "Is Follower"
 msgstr ""
@@ -624,7 +822,11 @@ msgid "Language"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard____last_update
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard____last_update
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract____last_update
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence____last_update
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period____last_update
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate____last_update
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type____last_update
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner____last_update
@@ -632,7 +834,11 @@ msgid "Last Modified on"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__write_uid
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__write_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__write_uid
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__write_uid
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__write_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__write_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__write_uid
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__write_uid
@@ -640,7 +846,11 @@ msgid "Last Updated by"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__write_date
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__write_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__write_date
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__write_date
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__write_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__write_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__write_date
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__write_date
@@ -653,7 +863,25 @@ msgid "Last notification marked as read from base Calendar"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__last_state
+msgid "Last state"
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Liquidar"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__liquidated
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__liquidated
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__liquidated
+msgid "Liquidated"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_main_attachment_id
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_main_attachment_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_main_attachment_id
 msgid "Main Attachment"
 msgstr ""
@@ -665,12 +893,14 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_error
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_has_error
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_has_error
 msgid "Message Delivery error"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_ids
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_ids
 msgid "Messages"
 msgstr ""
@@ -682,39 +912,53 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__my_activity_date_deadline
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__my_activity_date_deadline
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_incidence_wizard__name
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__name
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_rate__name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_contract_type__name
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__name
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
 msgid "Name"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_calendar_event_id
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_calendar_event_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_date_deadline
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_date_deadline
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_summary
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_summary
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_summary
 msgid "Next Activity Summary"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_type_id
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_type_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_type_id
 msgid "Next Activity Type"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__state__no_resolution
+msgid "No Resolution"
 msgstr ""
 
 #. module: energy_marketing
@@ -729,32 +973,47 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_needaction_counter
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_needaction_counter
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_needaction_counter
 msgid "Number of Actions"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_error_counter
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_has_error_counter
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_has_error_counter
 msgid "Number of errors"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_needaction_counter
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_needaction_counter
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_error_counter
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_has_error_counter
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_renewing_period__period_in_months
+msgid "Number of months to renew"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_unread_counter
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__message_unread_counter
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_unread_counter
 msgid "Number of unread messages"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__state__open
+msgid "Open"
 msgstr ""
 
 #. module: energy_marketing
@@ -773,6 +1032,16 @@ msgid "Partner with same Tax ID"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_renewing_period__period_in_months
+msgid "Period In Months"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model,name:energy_marketing.model_energy_contract_renewing_period
+msgid "Period in months to use in contract renewing"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__phone
 msgid "Phone"
 msgstr ""
@@ -785,6 +1054,11 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__phone_mobile_search
 msgid "Phone/Mobile"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__property_product_pricelist
+msgid "Pricelist"
 msgstr ""
 
 #. module: energy_marketing
@@ -823,23 +1097,61 @@ msgid "Relation valid"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__renewed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__renewed
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__renewed
 msgid "Renewed"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__renewing_period
+msgid "Renewing Period"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.ui.menu,name:energy_marketing.energy_marketing_contract_renewing_periods
+msgid "Renewing periods"
+msgstr ""
+
+#. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Renovacion"
+msgstr ""
+
+#. module: energy_marketing
+#: model:res.partner.relation.type,name_inverse:energy_marketing.delegate_relation
+msgid "Represents"
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_contract_resolution_wizard__description
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__resolution
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_incidence_form_view
+msgid "Resolution"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_user_id
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_user_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_user_id
 msgid "Responsible User"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__reversed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__reversed
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__reversed
 msgid "Reversed"
 msgstr ""
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Revertir"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_sms_error
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_has_sms_error
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr ""
@@ -851,6 +1163,7 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__salesperson
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__salesperson
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__user_id
 msgid "Salesperson"
 msgstr ""
@@ -863,11 +1176,6 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__self
 msgid "Self"
-msgstr ""
-
-#. module: energy_marketing
-#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__settled
-msgid "Settled"
 msgstr ""
 
 #. module: energy_marketing
@@ -901,13 +1209,20 @@ msgid "Signup URL"
 msgstr ""
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Siguiente etapa"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__state
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__state
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__state_id
 msgid "State"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_state
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__activity_state
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_state
 msgid ""
 "Status based on activities\n"
@@ -932,11 +1247,6 @@ msgid "Tags"
 msgstr ""
 
 #. module: energy_marketing
-#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__vat
-msgid "Tax ID"
-msgstr ""
-
-#. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__country_code
 msgid ""
 "The ISO country code in two chars. \n"
@@ -944,6 +1254,7 @@ msgid ""
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract__vat
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__vat
 msgid ""
 "The Tax Identification Number. Complete it if the contact is subjected to "
@@ -960,6 +1271,13 @@ msgstr ""
 msgid ""
 "This field is used to search on email address as the primary email field can"
 " contain more than strictly an email address."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
 msgstr ""
 
 #. module: energy_marketing
@@ -1008,6 +1326,7 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__activity_exception_decoration
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__activity_exception_decoration
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
@@ -1019,19 +1338,33 @@ msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_unread
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_unread
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_unread
 msgid "Unread Messages"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_unread_counter
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__message_unread_counter
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__loaded
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__loaded
+#: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__loaded
+msgid "Uploaded"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__barcode
 msgid "Use a barcode to identify this contact."
+msgstr ""
+
+#. module: energy_marketing
+#: model:res.groups,name:energy_marketing.group_energy_user
+msgid "User"
 msgstr ""
 
 #. module: energy_marketing
@@ -1045,18 +1378,26 @@ msgid "Users"
 msgstr ""
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__vat
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__vat
+msgid "VAT/Tax ID"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__website
 msgid "Website Link"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__website_message_ids
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__website_message_ids
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__website_message_ids
 msgid "Website Messages"
 msgstr ""
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__website_message_ids
+#: model:ir.model.fields,help:energy_marketing.field_energy_contract_incidence__website_message_ids
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__website_message_ids
 msgid "Website communication history"
 msgstr ""
@@ -1067,6 +1408,16 @@ msgid ""
 "When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
 "If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
 "Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model,name:energy_marketing.model_contract_incidence_wizard
+msgid "Wizard to create incidences for contracts."
+msgstr ""
+
+#. module: energy_marketing
+#: model:ir.model,name:energy_marketing.model_contract_resolution_wizard
+msgid "Wizard to create resolutions for incidences."
 msgstr ""
 
 #. module: energy_marketing

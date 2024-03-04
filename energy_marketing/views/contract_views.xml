@@ -7,10 +7,17 @@
         		<field name="name"/>
         		<field name="salesperson"/>
         		<field name="partner"/>
-        		<field name="state"/>
+        		<field name="vat" string="DNI/NIE"/>
         		<field name="rate"/>
         		<field name="trading_company"/>
         		<field name="contract_type"/>
+        		<field name="state" widget="badge" 
+									decoration-success="state == 'liquidated'" 
+									decoration-danger ="state in ['reversed','cancelled']"
+									decoration-info="state in ['in_progress','renewed']"
+									decoration-warning="state == 'incidence'"
+									decoration-muted="state == 'closed'"
+									decoration-primary="state == 'loaded'"/>
         	</tree>
         </field>
 	</record>
@@ -21,24 +28,104 @@
         <field name="arch" type="xml">
         	<form>
         		<header>
-        			<field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+        			<field name="state" widget="statusbar" readonly="1"/>
+					<field name="id" invisible="1"/>
+					<button string="Next step" type="object" name="next_state" 
+							attrs="{'invisible':[('state','in',['incidence','in_progress','liquidated','reversed','closed','cancelled'])]}"
+							groups="energy_marketing.group_energy_manager"/>
+					<button string="Incidence" type="action" name="energy_marketing.energy_action_contract_incidences_wizard" 
+							attrs="{'invisible':[('state','in',['initial','closed','cancelled','incidence','reversed'])]}"
+							context="{'default_contract': id}"
+							groups="energy_marketing.group_energy_manager"/>
+					<button string="Resolve incidence" type="action" name="energy_marketing.energy_action_contract_resolution_wizard" 
+							attrs="{'invisible':[('state','!=','incidence')]}"
+							context="{'default_contract': id}"
+							groups="energy_marketing.group_energy_manager"/>
+					<button string="Liquidate" type="object" name="generate_liquidation" 
+							attrs="{'invisible':[('state','not in',['in_progress','renewed'])]}"
+							groups="energy_marketing.group_energy_manager"/>
+					<button string="Reverse" type="object" name="reverse_contract" 
+							attrs="{'invisible':[('state','not in',['in_progress','liquidated'])]}"
+							groups="energy_marketing.group_energy_manager"/>
+					<button string="Renewed" type="object" name="renewed_contract" 
+							attrs="{'invisible':[('state','not in',['liquidated','closed'])]}"
+							groups="energy_marketing.group_energy_manager"/>
+					<button string="Cancel" type="object" name="cancel_contract" 
+							attrs="{'invisible':[('state','in',['in_progress','liquidated','reversed','renewed','closed','cancelled'])]}"
+							groups="energy_marketing.group_energy_manager"/>
         		</header> 
         		<field name="user_company_ids" invisible="1"/>
         		<field name="company_id" invisible="1"/>
         		<field name="delegated_domain" invisible="1"/>
         		<sheet>
-        			<group>
-        				<field name="name"/>
+					<div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button"
+                               name="contract_incidences"
+                               icon="fa-book"
+                               type="object"
+                               domain="[('contract','=', id)]"
+                               attrs="{'invisible': [('incidence_count', '=', 0)]}">
+                               <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="incidence_count"/>
+                                        Incidences
+                                    </span>
+                               </div>
+                        </button>
+                    </div>
+					<h1>
+						<field name="name" placeholder="Name"/>
+					</h1>
+        			<group col="4">
         				<field name="salesperson"/>
-        				<field name="partner"/>
+        				<field name="partner" required="1"/>
         				<field name="delegate" domain="delegated_domain"/>
+        				<field name="vat" string="DNI/NIE"/>
+        			</group>
+        			<group col="4">
         				<field name="rate"/>
         				<field name="trading_company"/>
         				<field name="contract_type"/>
-        				<field name='active'/>
+        				<field name="CUPS"/>
         			</group>
+        			<group col="4">
+        				<field name="date"/>
+        				<field name="renewing_period"/>
+        			</group>
+        			<field name="active" invisible="1"/>
         		</sheet>
+        		<div class="o_attachment_preview"/>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                </div>
         	</form>
         </field>
 	</record>
+	
+	<record id="energy_contract_search_view" model="ir.ui.view">
+			<field name="name">energy.contract.search.view</field>
+			<field name="model">energy.contract</field>
+			<field name="arch" type="xml">
+				<search string="Contracts">
+					<field name="vat"/>
+					<field name="CUPS"/>
+					<field name="salesperson"/>
+					<field name="partner"/>
+					<field name="trading_company"/>
+					<!-- 
+					<group expand="0" string="Filters">
+                    	<filter name="check_in" string="Checks In" domain="[('is_check_in','=', True)]"/>
+                    	<filter name="check_out" string="Checks Out" domain="[('is_check_in','=', False)]"/>
+                    	<separator/>
+                    	<filter name="today" string="Today " separator="1" domain="[('check','&lt;=', (datetime.date.today()).strftime('%Y-%m-%d')),('check','&gt;=',(datetime.date.today()).strftime('%Y-%m-%d'))]" />
+                    	<filter name="yesterday" string="Yesterday" domain="[('check','&gt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d 00:00:00'))), ('check','&lt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d 00:00:00')))]" />
+              	      	<filter name="current_week" string="Current Week" domain="[('check','&lt;=', (context_today() + relativedelta(weeks=0,day=7, weekday=-1)).strftime('%Y-%m-%d')),('check','&gt;=',(context_today() - relativedelta(weeks=1, weekday=0)).strftime('%Y-%m-%d'))]"  />
+                	    <filter name="last_week" string="Last week" domain="[('check', '&gt;=', ((context_today()+relativedelta(weeks=-2,days=1, weekday=0)).strftime('%Y-%m-%d'))),('check', '&lt;=', ((context_today()+relativedelta(weeks=-1,weekday=6)).strftime('%Y-%m-%d')))]"  />
+                	</group>
+                	 -->
+				</search>
+			</field>
+	</record>
+	
 </odoo>
