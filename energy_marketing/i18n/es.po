@@ -111,11 +111,6 @@ msgid "Annual"
 msgstr "Anual"
 
 #. module: energy_marketing
-#: model:res.groups,name:energy_marketing.group_energy_manager
-msgid "Energy Administrator"
-msgstr "Administrador energético"
-
-#. module: energy_marketing
 #: model_terms:ir.ui.view,arch_db:energy_marketing.energy_trading_partner_view
 msgid "Archived"
 msgstr "Archivado"
@@ -195,10 +190,6 @@ msgstr "CUPS"
 #. module: energy_marketing
 #: model_terms:ir.ui.view,arch_db:energy_marketing.contract_incidence_wizard_form_view
 #: model_terms:ir.ui.view,arch_db:energy_marketing.contract_resolution_wizard_form_view
-msgid "Cancel"
-msgstr "Cancelar"
-
-#. module: energy_marketing
 #: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
 msgid "Cancel"
 msgstr "Cancelar"
@@ -512,14 +503,19 @@ msgid "Employees Count"
 msgstr "Contador de empleados"
 
 #. module: energy_marketing
+#: model:res.groups,name:energy_marketing.group_energy_manager
+msgid "Energy Administrator"
+msgstr "Administrador Energía"
+
+#. module: energy_marketing
 #: model:ir.ui.menu,name:energy_marketing.energy_marketing_root
 msgid "Energy Broker"
-msgstr "Comercializadoras"
+msgstr "Broker energético"
 
 #. module: energy_marketing
 #: model:ir.module.category,name:energy_marketing.module_energy_marketing
 msgid "Energy Marketing"
-msgstr "Comercializadoras"
+msgstr "Broker energéticos"
 
 #. module: energy_marketing
 #: model:ir.actions.act_window,name:energy_marketing.energy_action_contract_resolution_wizard
@@ -573,7 +569,7 @@ msgid ""
 "comparisons."
 msgstr ""
 "Campo utilizado para almacenar el número de teléfono desinfectado. Ayuda a acelerar las búsquedas y "
-"comparaciones".
+"comparaciones."
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_follower_ids
@@ -677,7 +673,7 @@ msgstr "Icono para indicar la excepción de la actividad"
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_needaction
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_unread
 msgid "If checked, new messages require your attention."
-msgstr "Si está marcado, los mensajes nuevos requieren su atención".
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__message_has_error
@@ -687,7 +683,7 @@ msgstr "Si está marcado, los mensajes nuevos requieren su atención".
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_error
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Si está marcado, algunos mensajes tienen un error".
+msgstr "Si está marcado, algunos mensajes tienen un error."
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__team_id
@@ -753,6 +749,7 @@ msgstr "Activado"
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__incidence
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__incidence
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__incidence
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
 msgid "Incidence"
 msgstr "Incidencia"
 
@@ -774,16 +771,6 @@ msgid "Incidences"
 msgstr "Incidencias"
 
 #. module: energy_marketing
-#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
-msgid "Incidence"
-msgstr "Incidencia"
-
-#. module: energy_marketing
-#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
-msgid "Resolve incidence"
-msgstr "Resolver incidencia"
-
-#. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__mobile_blacklisted
 msgid ""
 "Indicates if a blacklisted sanitized phone number is a mobile number. Helps "
@@ -792,7 +779,7 @@ msgid ""
 msgstr ""
 "Indica si un número de teléfono desinfectado en la lista negra es un número de móvil. Ayuda "
 "distinguir qué número está en la lista negra cuando hay ambos"
-"campo de telefonía móvil y telefonía en un modelo".
+"campo de telefonía móvil y telefonía en un modelo."
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__phone_blacklisted
@@ -808,7 +795,7 @@ msgid "Industry"
 msgstr ""
 "Indica si un número de teléfono desinfectado en la lista negra es un número de teléfono. Ayuda "
 "distinguir qué número está en la lista negra cuando hay ambos"
-"campo de telefonía móvil y telefonía en un modelo".
+"campo de telefonía móvil y telefonía en un modelo."
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__type
@@ -977,6 +964,11 @@ msgid "Next Activity Type"
 msgstr "Siguiente tipo de actividad"
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Next step"
+msgstr "Paso siguiente"
+
+#. module: energy_marketing
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__state__no_resolution
 msgid "No Resolution"
 msgstr "Sin resolución"
@@ -1077,11 +1069,6 @@ msgid "Phone/Mobile"
 msgstr "Móvil"
 
 #. module: energy_marketing
-#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__property_product_pricelist
-msgid "Pricelist"
-msgstr "Lista de precios"
-
-#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__rate
 msgid "Rate"
 msgstr "Tarifa"
@@ -1120,6 +1107,7 @@ msgstr "Relación valida"
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__renewed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__renewed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__renewed
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
 msgid "Renewed"
 msgstr "Renovación"
 
@@ -1134,11 +1122,6 @@ msgid "Renewing periods"
 msgstr "Periodos de renovación"
 
 #. module: energy_marketing
-#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
-msgid "Renewing"
-msgstr "Renovación"
-
-#. module: energy_marketing
 #: model:res.partner.relation.type,name_inverse:energy_marketing.delegate_relation
 msgid "Represents"
 msgstr "Representante"
@@ -1151,6 +1134,11 @@ msgid "Resolution"
 msgstr "Resolución"
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Resolve incidence"
+msgstr "Resolver incidencia"
+
+#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__activity_user_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__activity_user_id
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__activity_user_id
@@ -1158,16 +1146,16 @@ msgid "Responsible User"
 msgstr "Usuario responsable"
 
 #. module: energy_marketing
+#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
+msgid "Reverse"
+msgstr "Atrás"
+
+#. module: energy_marketing
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__last_state__reversed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract__state__reversed
 #: model:ir.model.fields.selection,name:energy_marketing.selection__energy_contract_incidence__contract_state__reversed
 msgid "Reversed"
-msgstr "Reservado"
-
-#. module: energy_marketing
-#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
-msgid "Revert"
-msgstr "Revertir"
+msgstr "Revertido"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_has_sms_error
@@ -1206,7 +1194,7 @@ msgstr "Compartir contacto"
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__signup_expiration
 msgid "Signup Expiration"
-msgstr ""Caducidad del registro""
+msgstr "Caducidad del registro"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__signup_token
@@ -1229,11 +1217,6 @@ msgid "Signup URL"
 msgstr "URL de registro"
 
 #. module: energy_marketing
-#: model_terms:ir.ui.view,arch_db:energy_marketing.energy_contract_form_view
-msgid "Next step"
-msgstr "Siguiente etapa"
-
-#. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__state
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract_incidence__state
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__state_id
@@ -1253,7 +1236,7 @@ msgstr ""
 "Estado basado en actividades\n"
 "Atrasado: la fecha de vencimiento ya pasó\n"
 "Hoy: la fecha de la actividad es hoy\n"
-"Planificado: actividades futuras".
+"Planificado: actividades futuras."
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__street
@@ -1271,13 +1254,19 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #. module: energy_marketing
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__vat
+#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__vat
+msgid "Tax ID"
+msgstr ""
+
+#. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__country_code
 msgid ""
 "The ISO country code in two chars. \n"
 "You can use this field for quick search."
 msgstr ""
 "El código ISO del país en dos caracteres. \n"
-"Puede utilizar este campo para una búsqueda rápida".
+"Puede utilizar este campo para una búsqueda rápida."
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__vat
@@ -1287,7 +1276,7 @@ msgid ""
 "government taxes. Used in some legal statements."
 msgstr ""
 "El Número de Identificación Fiscal. Complételo si el contacto está sujeto a "
-"impuestos gubernamentales. Se utiliza en algunas declaraciones legales".
+"impuestos gubernamentales. Se utiliza en algunas declaraciones legales."
 
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_trading_partner__user_id
@@ -1299,7 +1288,8 @@ msgstr "El usuario interno a cargo de este contacto."
 msgid ""
 "This field is used to search on email address as the primary email field can"
 " contain more than strictly an email address."
-msgstr """Este campo se utiliza para buscar direcciones de correo electrónico como puede hacerlo el campo de correo electrónico principal"
+msgstr ""
+"Este campo se utiliza para buscar direcciones de correo electrónico como puede hacerlo el campo de correo electrónico principal"
 "contener más que estrictamente una dirección de correo electrónico."
 
 #. module: energy_marketing
@@ -1365,7 +1355,7 @@ msgstr ""
 #. module: energy_marketing
 #: model:ir.model.fields,help:energy_marketing.field_energy_contract__user_company_ids
 msgid "UX: Limit to lead company or all if no company"
-msgstr "Tipo de actividad de excepción registrada".
+msgstr "Tipo de actividad de excepción registrada."
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__message_unread
@@ -1407,12 +1397,6 @@ msgstr "Compañia del usuario"
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__user_ids
 msgid "Users"
 msgstr "Usuarios"
-
-#. module: energy_marketing
-#: model:ir.model.fields,field_description:energy_marketing.field_energy_contract__vat
-#: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__vat
-msgid "DNI/NIF"
-msgstr "DNI/NIF"
 
 #. module: energy_marketing
 #: model:ir.model.fields,field_description:energy_marketing.field_energy_trading_partner__website
