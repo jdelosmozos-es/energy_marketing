@@ -29,5 +29,17 @@
 		 	<field name="group_ids" eval="[Command.link(ref('base.group_user'))]"/>
 			<field name="subscription_department_ids" eval="[Command.link(ref('hr.dep_administration'))]"/>
 		 </record>
+
+		<record id="email_template_energy_contract" model="mail.template">
+			<field name="name">Plantilla de email para cliente</field>
+			<field name="model_id" ref="energy_marketing.model_energy_contract"/>
+			<field name="email_from">{{object.salesperson.email}}</field>
+			<field name="email_to">{{object.partner.email}}</field>
+			<field name="subject">Notificación relativa a:{{object.CUPS}}</field>
+			<field name="body_html" type="html">
+				<p>Dear <t t-out="object.partner.name"/>
+				</p>
+			</field>
+		</record>
 	</data>
 </odoo>

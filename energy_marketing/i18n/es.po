@@ -510,12 +510,12 @@ msgstr "Administrador Energía"
 #. module: energy_marketing
 #: model:ir.ui.menu,name:energy_marketing.energy_marketing_root
 msgid "Energy Broker"
-msgstr "Broker energético"
+msgstr "Comercializadoras"
 
 #. module: energy_marketing
 #: model:ir.module.category,name:energy_marketing.module_energy_marketing
 msgid "Energy Marketing"
-msgstr "Broker energéticos"
+msgstr "Comercializadoras"
 
 #. module: energy_marketing
 #: model:ir.actions.act_window,name:energy_marketing.energy_action_contract_resolution_wizard

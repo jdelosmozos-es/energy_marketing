@@ -6,6 +6,7 @@
 		<field name="arch" type="xml">
 			<field name="vat" position="after">
 				<field name="trading_company" attrs="{'invisible': [('trading_company','=',False)]}"/>
+				<field name="is_admin" groups="energy_marketing.group_energy_manager"/>
 			</field>
         	<xpath expr="//sheet" position="before">
 	            <header>

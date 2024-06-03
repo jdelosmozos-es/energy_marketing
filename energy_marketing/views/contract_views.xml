@@ -4,6 +4,8 @@
         <field name="model">energy.contract</field>
         <field name="arch" type="xml">
         	<tree>
+				<field name="CUPS"/>
+				<field name="date"/>
         		<field name="name"/>
         		<field name="salesperson"/>
         		<field name="partner"/>
@@ -11,6 +13,7 @@
         		<field name="rate"/>
         		<field name="trading_company"/>
         		<field name="contract_type"/>
+				<field name="parent_id" invisible="1"/>
         		<field name="state" widget="badge" 
 									decoration-success="state == 'liquidated'" 
 									decoration-danger ="state in ['reversed','cancelled']"
@@ -76,21 +79,22 @@
 					<h1>
 						<field name="name" placeholder="Name"/>
 					</h1>
+					<field name="category_ids" string="Etiqueta" options="{'no_create': True}"/>
         			<group col="4">
-        				<field name="salesperson"/>
-        				<field name="partner" required="1"/>
-        				<field name="delegate" domain="delegated_domain"/>
+        				<field name="salesperson" options="{'no_create': True}"/>
+        				<field name="partner" required="1" options="{'no_create': True}"/>
+        				<field name="delegate" domain="delegated_domain" options="{'no_create': True}"/>
         				<field name="vat" string="DNI/NIE"/>
         			</group>
         			<group col="4">
-        				<field name="rate"/>
-        				<field name="trading_company"/>
-        				<field name="contract_type"/>
+        				<field name="rate" options="{'no_create': True}"/>
+        				<field name="trading_company" options="{'no_create': True}"/>
+        				<field name="contract_type" options="{'no_create': True}"/>
         				<field name="CUPS"/>
         			</group>
         			<group col="4">
         				<field name="date"/>
-        				<field name="renewing_period"/>
+        				<field name="renewing_period" options="{'no_create': True}"/>
         			</group>
         			<field name="active" invisible="1"/>
         		</sheet>
@@ -102,6 +106,111 @@
         	</form>
         </field>
 	</record>
+
+	<record id='energy_contract_kanban_view' model='ir.ui.view'>
+		<field name="name">energy.contract.kanban.view</field>
+        <field name="model">energy.contract</field>
+        <field name="arch" type="xml">
+        	<kanban default_order="date desc" default_group_by="state" class="o_kanban_column" archivable="false" sample="1" records_draggable="false">
+				<field name="partner"/>
+				<field name="vat" string="DNI/NIE"/>
+				<field name="rate"/>
+				<field name="trading_company"/>
+				<field name="contract_type"/>
+				<field name="date"/>
+				<field name="end_date"/>
+				<field name="state"/>
+				<field name="parent_id"/>
+				<progressbar field="activity_state" colors="{&quot;planned&quot;: &quot;success&quot;, &quot;today&quot;: &quot;warning&quot;, &quot;overdue&quot;: &quot;danger&quot;}" help="This bar allows to filter the contracts based on scheduled activities."/>
+
+				<templates>
+					<t t-name="kanban-box">
+						<div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record" style="box-shadow:0.1rem 0.1rem 0.1rem rgb(1,1,1,0.1) !important;">
+							<field name="avatar_128" widget="image" style="margin: 5px; box-shadow:0.1rem 0.1rem 0.1rem rgb(1,1,1,0.1) !important;" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+	
+							<div>
+								<div class="o_dropdown_kanban dropdown kmenu">
+									<a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+										<span class="fa fa-ellipsis-v"/>
+									</a>
+									<div class="dropdown-menu" role="menu">
+										<t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+									</div>
+								</div>
+								<div class="oe_kanban_details">
+									<div class="o_kanban_record_top">
+										<div class="o_kanban_record_headings" style="display:contents">
+											<div class="o_kanban_record_top_left">
+												<strong class="o_kanban_record_title">
+													<field name="partner"/>
+												</strong>
+												<span  class="o_kanban_record_subtitle">
+													<field name="CUPS"/>
+												</span>
+												<field name="category_ids" class="o_kanban_record_category" widget="badge" options="{'color_field': 'color'}"/>
+											</div>
+											<div class="o_kanban_record_top_right">
+												
+											</div>
+										</div>
+									</div>
+									<br/>
+									<ul>
+										<li class="o_force_ltr">
+											<i class="fa fa-file-o"/>
+											<field name="name"/>
+										</li>
+										<li class="o_force_ltr">
+											<i class="fa fa-calendar"/>
+											<field name="date"/></li>
+									</ul>
+								</div>
+								<div class="oe_kanban_content position-absolute fixed-bottom mr-2 o_hr_employee_kanban_bottom">
+									<div class="o_kanban_record_bottom">
+										<div class="oe_kanban_bottom_left">
+											<field name="state" widget="label_selection" options="{'classes': {'initial': 'default', 'cancelled': 'muted', 'loaded': 'default', 'in_profress':'info','liquidated':'success','renewed':'default','incidence':'warning','reversed':'danger','closed':'muted'}}"/>
+										</div>
+										<div class="oe_kanban_bottom_right float-right">
+											<div>
+												<button string="Cancel" type="object" name="kanban_send_mail" class="kanban_send_mail" >
+													<i class="fa fa-envelope" iconcolor="#893456"/>
+													<i class="fa fa-envelope-o mail-hover" iconcolor="#893456"/>
+												</button>
+											</div>
+											<div class="oe_kanban_bottom_right">
+												<field name="salesperson" widget="many2one_avatar_user"/>
+											</div>
+											<div class="hr_activity_container">
+												<field name="activity_ids" widget="kanban_activity"/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+
+	<record id="energy_contract_calendar" model="ir.ui.view">
+		<field name="name">energy.contract.calendar</field>
+		<field name="model">energy.contract</field>
+		<field eval="2" name="priority"/>
+		<field name="arch" type="xml">
+			<calendar date_start="end_date" date_delay="delay" string="Tasks" mode="month" color="salesperson" event_limit="5"
+					  hide_time="true" js_class="project_calendar" event_open_popup="true" quick_add="false" delete="0">
+				<field name="salesperson" widget="many2one_avatar_user"/>
+				<field name="CUPS"/>
+				<field name="partner"/>
+				<field name="category_ids" widget="many2many_tags" attrs="{'invisible': [('category_ids', '=', [])]}"/>
+				<field name="name"/>
+				<field name="date"/>
+				<field name="state" widget="label_selection" options="{'classes': {'initial': 'default', 'cancelled': 'muted', 'loaded': 'default', 'in_profress':'info','liquidated':'success','renewed':'default','incidence':'warning','reversed':'danger','closed':'muted'}}"/>
+			</calendar>
+		</field>
+	 </record>
 	
 	<record id="energy_contract_search_view" model="ir.ui.view">
 			<field name="name">energy.contract.search.view</field>
@@ -113,6 +222,24 @@
 					<field name="salesperson"/>
 					<field name="partner"/>
 					<field name="trading_company"/>
+					<filter name="one_month" string="Próximo mes" separator="1" domain="[('end_date','&gt;=',(context_today()+relativedelta(months=-1)).strftime('%Y-%m-%d')),('end_date','&lt;',context_today().strftime('%Y-%m-%d')),]" />
+					<filter name="quarter_month" string="Próximos 3 meses" separator="1" domain="[('end_date','&gt;=',(context_today()+relativedelta(months=-3)).strftime('%Y-%m-%d')),('end_date','&lt;',context_today().strftime('%Y-%m-%d')),]" />
+					<filter name="contract_end" string="Vencido" separator="1" domain="[('end_date','&lt;=',context_today().strftime('%Y-%m-%d'))]" />
+					<filter string="Incidencias" name="state" domain="[('state', '=', 'incidence')]"/>
+					<group expand="0" string="Group By">
+	<!--					<filter string="Date" name="start_date_group" domain="[]" context="{'group_by':'start_date:day'}"/> -->
+	<!--					<filter string="Space" name="space" domain="[]" context="{'group_by':'event_location_id'}"/> -->
+							<filter string="Estado" name="state_group" domain="[]" context="{'group_by':'state'}"/>
+							<filter string="Comercial" name="state_group" domain="[]" context="{'group_by':'salesperson'}"/>
+							<filter string="Comercializadora" name="state_group" domain="[]" context="{'group_by':'trading_company'}"/>
+					</group>		
+					<searchpanel view_types="kanban,list">
+						<field name="parent_id" text="name" enable_counters="1" limit="1000" groups="energy_marketing.group_energy_manager"/>
+						<field name="category_ids" text="name" enable_counters="1"  limit="1000"/>
+						<field name="state" text="name" enable_counters="1"  limit="1000"/>
+						
+						<!--<field name="trading_company" text="name" enable_counters="1" limit="1000"/> -->
+					</searchpanel>
 					<!-- 
 					<group expand="0" string="Filters">
                     	<filter name="check_in" string="Checks In" domain="[('is_check_in','=', True)]"/>

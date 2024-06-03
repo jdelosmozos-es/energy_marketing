@@ -20,9 +20,15 @@
         'views/contract_incidence_views.xml',
         'views/menus.xml',
         'data/sequence.xml',
+        'views/mail_views.xml'
     ],
+    'assets': {
+        'web.assets_backend': [
+                'energy_marketing/static/src/css/styles.scss',
+            ],
+    },
     'images': ['static/description/icon.png'],
     'license': 'Other proprietary',
     'installable': True,
-    'application': True
+    'application': False
 }

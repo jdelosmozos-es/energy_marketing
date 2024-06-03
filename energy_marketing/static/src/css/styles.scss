@@ -1,0 +1,30 @@
+.o_kanban_image_fill_left{
+    background-size: inherit !important;
+    margin: 5px !important;
+    margin-bottom: 8px !important;
+    max-width: 95px !important;
+}
+.o_kanban_record_top_right{
+    position: relative;
+    right: -14px;
+}
+.o_hr_employee_kanban_bottom{
+    z-index: 1;
+}
+.kanban_send_mail{
+    background:none;
+    border:none;
+    color: #c03000;
+    .mail-hover{
+        display:none;
+    }
+}
+.kanban_send_mail:hover{
+    display:none !important;
+    .mail-hover{
+        display:block;
+        background:none;
+        border:none;
+        color: #c03000;
+    }
+}

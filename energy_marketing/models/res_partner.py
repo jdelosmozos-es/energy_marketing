@@ -3,8 +3,15 @@ from odoo import models, fields, api
 class Partner(models.Model):
     _inherit = 'res.partner'
     
-    trading_company = fields.Many2one(comodel_name='energy.trading.partner',compute='_compute_trading_company')
+    trading_company = fields.Many2one(comodel_name='energy.trading.partner',compute='_compute_trading_company')  
+    is_admin = fields.Boolean(string='Administrador',default=False, compute='_compute_is_admin', store=True)
     
+    def _compute_is_admin(self):
+        for record in self:
+            record.is_admin = False
+            if self.env.user.has_group('energy_marketing.group_energy_manager'):
+                record.is_admin = True
+
     @api.depends('name')
     def _compute_trading_company(self):
         for record in self:
@@ -13,7 +20,6 @@ class Partner(models.Model):
                 record.trading_company = search[0]
             else:
                 record.trading_company = False
-
     
     def action_create_trading_company(self):
         self.ensure_one()

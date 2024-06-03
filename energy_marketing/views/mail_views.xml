@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="mail_contract_form_view" model="ir.ui.view">
+            <field name="name">Mail Attachment</field>
+            <field name="model">mail.compose.message</field>
+            <field name="inherit_id" ref="mail.email_compose_message_wizard_form" />
+            <field name="arch" type="xml">
+                <field name="attachment_ids" position="replace">
+                    <field string="Añadir adjuntos" name="attachment_ids" widget="many2many_tags" domain="[('res_model','=',model),('res_id','=',res_id)]" options="{'no_create': True}" />
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>
