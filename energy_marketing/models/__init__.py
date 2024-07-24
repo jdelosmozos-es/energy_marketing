@@ -6,3 +6,4 @@ from . import energy_rate
 # from . import contract_payment
 from . import contract_renewing_period
 from . import contract_incidence
+from . import contract_management_task

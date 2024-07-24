@@ -105,6 +105,7 @@ class EnergyContract(models.Model):
         'energy.contract.category',
         string='Tipo')
     delay = fields.Integer(string='Delay', default=24)
+    management_tasks = fields.Many2many(comodel_name='energy.contract.management.task')
 
     @api.depends('date','renewing_period')
     def _compute_end_date(self):
