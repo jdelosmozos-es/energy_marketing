@@ -6,11 +6,16 @@ class Partner(models.Model):
     trading_company = fields.Many2one(comodel_name='energy.trading.partner',compute='_compute_trading_company')  
     is_admin = fields.Boolean(string='Administrador',default=False, compute='_compute_is_admin', store=True)
     
+    @api.depends('name')
     def _compute_is_admin(self):
         for record in self:
             record.is_admin = False
-            if self.env.user.has_group('energy_marketing.group_energy_manager'):
+            search = self.env['energy.trading.partner'].search([('partner','=',record.id)])
+            if search:
                 record.is_admin = True
+            for user in record.user_ids:
+                if user.has_group('energy_marketing.group_energy_manager'):
+                    record.is_admin = True
 
     @api.depends('name')
     def _compute_trading_company(self):
